@@ -14,8 +14,8 @@ if __name__ == '__main__':
     serj.say_weather(wm.curr_temp, wm.wind_speed, wm.wind_dir, wm.weather_desc)
     tm = TaskManager()
     tm.create_task('Приготовить бабушке подарок', datetime.strptime("19.10.2019", "%d.%m.%Y").date())
-    task_list = tm.get_active_tasks()
-    if len(task_list) > 0:
+    if tm.check_active_tasks():
+        task_list = tm.get_active_tasks()
         serj.say('У вас есть активные задачи')
         for t in task_list:
             serj.say_task(t.text, t.datetime)
