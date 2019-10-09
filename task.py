@@ -19,6 +19,7 @@ class Task:
     def is_active(self):
         return self._active
 
+
 class TaskManager:
     def __init__(self):
         self._task_list = list()

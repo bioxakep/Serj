@@ -1,13 +1,9 @@
 import pyttsx3
 from datetime import datetime
-
-
 # from gtts import gTTS # IF NEED SAVE VOICE TO FILE
 
 
 class Serj:
-    # 'час', 'часа', 'часов' : 'минута', 'минуты', 'минут' : 'секунда', 'секунды', 'секунд'
-    # 'часа', 'часов', 'часов' : 'минуты', 'минут', 'минут' : 'секунды', 'секунд', 'секунд'
     ends_dict = {1: 0, 2: 1, 3: 1, 4: 1, 5: 2, 6: 2, 7: 2, 8: 2, 9: 2, 0: 2}
     hour_ends = [' час ', ' часа ', ' часов ']
     minute_ends = [' минута ', ' минуты ', ' минут ']
@@ -80,7 +76,7 @@ class Serj:
 
     def word_ends(self, n, end_list):
         n = int(n % 100)
-        if n in range(5, 20):
+        if n in range(5, 21):
             return str(end_list[2])
         else:
             i = n % 10
