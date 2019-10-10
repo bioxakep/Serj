@@ -1,4 +1,5 @@
-appid = 'key'  # полученный при регистрации на OpenWeatherMap.org. Что-то вроде такого набора букв и цифр: "6d8e495ca73d5bbc1d6bf8ebd52c4123"
+from config import WEATHER_API
+appid = WEATHER_API  # полученный при регистрации на OpenWeatherMap.org. Что-то вроде такого набора букв и цифр: "6d8e495ca73d5bbc1d6bf8ebd52c4123"
 
 import requests
 

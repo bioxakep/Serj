@@ -19,6 +19,7 @@ class Task:
     def is_active(self):
         return self._active
 
+
 class TaskManager:
     def __init__(self):
         self._task_list = list()
@@ -45,10 +46,7 @@ class TaskManager:
         self._active_tasks += 1
 
     def check_active_tasks(self):
-        if self._active_tasks > 0:
-            print('У вас есть запланированные дела:')
-            for t in self._task_list:
-                self.remind(t)
+        return self._active_tasks > 0
 
     def delete_task(self, id):
         del_task = [t for t in self._task_list if t.id == id]
