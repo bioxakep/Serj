@@ -13,6 +13,8 @@ class Serj:
     minute_ends = [' минута ', ' минуты ', ' минут ']
     second_ends = [' секунда ', ' секунды ', ' секунд ']
     temp_ends = [' градус ', ' градуса ', ' градусов ']
+    pres_ends = [' миллиметр ', ' миллиметра ', ' миллиметров ']
+    procent_ends = [' процент ', ' процента ', ' процентов ']
     meters_ends = [' метр ', ' метра ', ' метров ']
     week_days = ['понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье']
 
@@ -69,9 +71,21 @@ class Serj:
         text = f'Температура воздуха {temp} {str(temp_end)} по Цельсию'
         self.say(text)
 
-    def say_weather(self, temp, wind_speed, wind_dir, description):
+    def say_humidity(self, humidity):
+        hum_end = self.word_ends(humidity, Serj.procent_ends)
+        text = f'Влажность воздуха {humidity} {str(hum_end)}'
+        self.say(text)
+
+    def say_pressure(self, press):
+        pres_ends = self.word_ends(press, Serj.pres_ends)
+        text = f'Давление {press} {str(pres_ends)} ртутного столба'
+        self.say(text)
+
+    def say_weather(self, temp, hum, press, wind_speed, wind_dir, description):
         self.say(f'На улице {description}')
         self.say_temp(temp)
+        self.say_humidity(hum)
+        self.say_pressure(press)
         wind_text = f'Ветер {wind_dir}, {wind_speed} {self.word_ends(wind_speed, Serj.meters_ends)} в секунду'
         self.say(wind_text)
 
