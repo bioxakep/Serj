@@ -8,10 +8,14 @@ if __name__ == '__main__':
     wm = WeatherMan('Moscow')
     serj = Serj()
     serj.set_rate(200)
+    serj.say_humidity(wm.curr_hum)
+    serj.say_pressure(wm.curr_pres)
+    '''
+    serj.say_hello('Варвара')
     serj.say_hello('Александр')
     serj.say_today_date()
     serj.say_time()
-    serj.say_weather(wm.curr_temp, wm.wind_speed, wm.wind_dir, wm.weather_desc)
+    serj.say_weather(wm.curr_temp, wm.curr_hum, wm.curr_pres, wm.wind_speed, wm.wind_dir, wm.weather_desc)
     tm = TaskManager()
     tm.create_task('Приготовить бабушке подарок', datetime.strptime("19.10.2019", "%d.%m.%Y").date())
     if tm.check_active_tasks():
@@ -19,3 +23,5 @@ if __name__ == '__main__':
         serj.say('У вас есть активные задачи')
         for t in task_list:
             serj.say_task(t.text, t.datetime)
+    '''
+
