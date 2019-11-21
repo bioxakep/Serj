@@ -7,3 +7,4 @@ config.py
 .idea/workspace.xml
 *.xml
 *.iml
+*.iml
